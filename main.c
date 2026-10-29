@@ -3,20 +3,22 @@
 
 int main(void)
 {
-    int i, average;
-    int sum;
-    int grade[SIZE];
+    int i;
+    int a[SIZE] = {1, 2, 3, 4, 5};
+    int b[SIZE] = {1, 2, 3, 4, 5};
+    int flag_same = 1;
 
-    sum = 0;
-    for(i=0; i<SIZE; i++)
+    for (i=0; i<SIZE; i++)
     {
-        printf("학생 성적을 입력하세요 : ");
-        scanf("%d", &grade[i]);
-        sum += grade[i];
+        if (a[i] != b[i])
+        {
+            printf("다른 값의 index: %d\n", i);
+            flag_same = 0;
+        }
     }
 
-    average = sum / SIZE;
-    printf("성적 평균 : %d\n", average);
+    if (flag_same == 1)
+        printf("배열은 같은 값을 가집니다.\n");
 
     return 0;
 }
